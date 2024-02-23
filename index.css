@@ -1,0 +1,14 @@
+/* * {
+    outline: 2px solid red;
+  } */
+
+#header {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+    border: 0;
+}
