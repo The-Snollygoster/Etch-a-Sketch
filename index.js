@@ -17,21 +17,21 @@ function createGrid(size) {
     }
 
     let selectedColour;
-    document.getElementById('black').checked = true;
-    for (let radioButton of radioButtons) {
-    if (radioButton.checked) {
-        selectedColour = radioButton.value;
-        break;
-        }
-    }
-
     let cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
     cell.addEventListener('mouseenter', () => {
+        for (let radioButton of radioButtons) {
+            if (radioButton.checked) {
+                selectedColour = radioButton.value;
+                break;
+                }
+            }
         cell.style.background = selectedColour;
         });
     });
 };
+
+document.getElementById('black').checked = true;
 createGrid(16);
 
 gridSize.addEventListener('click', () => {
