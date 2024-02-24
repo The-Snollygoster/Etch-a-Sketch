@@ -28,7 +28,7 @@ function createGrid(size) {
                 }
             }
         cell.style.background = selectedColour;
-        cell.style.opacity = parseFloat(cell.style.opacity) + 0.1;
+        cell.style.opacity = parseFloat(cell.style.opacity) + 0.2;
         });
     });
 };
