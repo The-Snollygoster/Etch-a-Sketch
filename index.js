@@ -19,6 +19,7 @@ function createGrid(size) {
     let selectedColour;
     let cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
+    cell.style.opacity = 0;
     cell.addEventListener('mouseenter', () => {
         for (let radioButton of radioButtons) {
             if (radioButton.checked) {
@@ -27,6 +28,7 @@ function createGrid(size) {
                 }
             }
         cell.style.background = selectedColour;
+        cell.style.opacity = parseFloat(cell.style.opacity) + 0.1;
         });
     });
 };
@@ -37,10 +39,8 @@ createGrid(16);
 gridSize.addEventListener('click', () => {
     document.getElementById("container").innerHTML = "";
     let custom = prompt('Please pick a grid size up to 100', 16);
-    if (isNaN(custom)) {
-        custom = prompt('It must be a number up to 100');
-    } else if (custom > 100) {
-        custom = prompt('The maximum grid size is 100x100. Please enter a lower value.');
+    if (isNaN(custom) || custom > 100) {
+        return alert('You must enter a number up to 100.');
     }
     createGrid(custom)
 });
