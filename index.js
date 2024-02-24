@@ -1,5 +1,6 @@
 let container = document.querySelector('#container');
 let gridSize = document.querySelector('#gridSize');
+let radioButtons = document.querySelectorAll('input[name=colour]');
 
 function createGrid(size) {
     for (r=0; r<size; r++) {
@@ -15,12 +16,21 @@ function createGrid(size) {
         container.appendChild(row);
     }
 
+    let selectedColour;
+    document.getElementById('black').checked = true;
+    for (let radioButton of radioButtons) {
+    if (radioButton.checked) {
+        selectedColour = radioButton.value;
+        break;
+        }
+    }
+
     let cells = document.querySelectorAll('.cell');
-cells.forEach((cell) => {
+    cells.forEach((cell) => {
     cell.addEventListener('mouseenter', () => {
-        cell.style.background = 'black';
+        cell.style.background = selectedColour;
+        });
     });
-});
 };
 createGrid(16);
 
