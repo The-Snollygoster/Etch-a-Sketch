@@ -37,8 +37,8 @@ createGrid(16);
 gridSize.addEventListener('click', () => {
     document.getElementById("container").innerHTML = "";
     let custom = prompt('Please pick a grid size up to 100', 16);
-    if (custom == NaN) {
-        custom = prompt('Please enter a number up to 100');
+    if (isNaN(custom)) {
+        custom = prompt('It must be a number up to 100');
     } else if (custom > 100) {
         custom = prompt('The maximum grid size is 100x100. Please enter a lower value.');
     }
