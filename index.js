@@ -30,6 +30,9 @@ function createGrid(size) {
         if (e.ctrlKey) {
             cell.style.background = selectedColour;
             cell.style.opacity = parseFloat(cell.style.opacity) + 0.2;
+            } else if (e.altKey) {
+            cell.style.background = selectedColour;
+            cell.style.opacity = parseFloat(cell.style.opacity) + 1.0;
             }
         });
     });
@@ -47,6 +50,4 @@ gridSize.addEventListener('click', () => {
     createGrid(custom)
 });
 
-// Have 'shade mode' and 'normal mode'. Hopefully dynamic like colours
 // add a colour randomiser and option
-// Also maybe have it only colour when a key is pressed down

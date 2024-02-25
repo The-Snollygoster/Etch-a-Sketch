@@ -9,32 +9,37 @@
 </head>
 <body>
     <h1 id="header">Etch-a-Sketch</h1>
-    <button id="gridSize">Grid Size</button>
-    <p>Hold the Ctrl key and move your mouse across the pad to draw</p>
-    <p>Up to 100 x 100!</p>
-    <div id="container"></div>
-    <div class="colours">
-        <div class="black">
-            <input type="radio" name="colour" value="black" id="black">
-            <label for="black">Black</label>
+    <div id="wrapper">
+        <div class="instructions">
+            <p id="text">Hold the Alt key and move your mouse across the pad to draw!</p>
+            <p id="text">Holt the Ctrl key for shade mode!</p>
+            <button id="gridSize">Grid Size</button>
+            <p id="size">Up to 100 x 100!</p>
         </div>
-        <div class="red">
-            <input type="radio" name="colour" value="red" id="red">
-            <label for="red">Red</label>
-        </div>
-        <div class="blue">
-            <input type="radio" name="colour" value="blue" id="blue">
-            <label for="blue">Blue</label>
-        </div>
-        <div class="yellow">
-            <input type="radio" name="colour" value="yellow" id="yellow">
-            <label for="yellow">Yellow</label>
-        </div>
-        <div class="green">
-            <input type="radio" name="colour" value="green" id="green">
-            <label for="green">Green</label>
+        <div id="container"></div>
+        <div class="colours">
+            <p id="text">Colour Options</p>
+            <div class="black">
+                <input type="radio" name="colour" value="black" id="black">
+                <label for="black">Black</label>
+            </div>
+            <div class="red">
+                <input type="radio" name="colour" value="red" id="red">
+                <label for="red">Red</label>
+            </div>
+            <div class="blue">
+                <input type="radio" name="colour" value="blue" id="blue">
+                <label for="blue">Blue</label>
+            </div>
+            <div class="yellow">
+                <input type="radio" name="colour" value="yellow" id="yellow">
+                <label for="yellow">Yellow</label>
+            </div>
+            <div class="green">
+                <input type="radio" name="colour" value="green" id="green">
+                <label for="green">Green</label>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
