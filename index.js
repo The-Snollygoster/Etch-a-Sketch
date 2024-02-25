@@ -20,15 +20,17 @@ function createGrid(size) {
     let cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
     cell.style.opacity = 0;
-    cell.addEventListener('mouseenter', () => {
+    cell.addEventListener('mouseenter', (e) => {
         for (let radioButton of radioButtons) {
             if (radioButton.checked) {
                 selectedColour = radioButton.value;
                 break;
                 }
             }
-        cell.style.background = selectedColour;
-        cell.style.opacity = parseFloat(cell.style.opacity) + 0.2;
+        if (e.ctrlKey) {
+            cell.style.background = selectedColour;
+            cell.style.opacity = parseFloat(cell.style.opacity) + 0.2;
+            }
         });
     });
 };
@@ -44,3 +46,7 @@ gridSize.addEventListener('click', () => {
     }
     createGrid(custom)
 });
+
+// Have 'shade mode' and 'normal mode'. Hopefully dynamic like colours
+// add a colour randomiser and option
+// Also maybe have it only colour when a key is pressed down
