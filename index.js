@@ -15,14 +15,17 @@ function createGrid(size) {
         }
         container.appendChild(row);
     }
-
+    
     let selectedColour;
     let cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
     cell.style.opacity = 0;
     cell.addEventListener('mouseenter', (e) => {
         for (let radioButton of radioButtons) {
-            if (radioButton.checked) {
+            if (random.checked) {
+                selectedColour = randColour();
+                break;
+            } else if (radioButton.checked) {
                 selectedColour = radioButton.value;
                 break;
                 }
@@ -50,4 +53,6 @@ gridSize.addEventListener('click', () => {
     createGrid(custom)
 });
 
-// add a colour randomiser and option
+const randColour = () =>  {
+    return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
+}
